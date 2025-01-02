@@ -1,11 +1,9 @@
-use std::io::{self, Read};
+mod editor;
+use editor::Editor;
 
 fn main() {
-    for byte in io::stdin().bytes() {
-        let ch = byte.unwrap() as char;
-        println!("{}", ch);
-        if ch == 'q' {
-            break;
-        }
-    }
+
+    let editor = Editor::new();
+    editor.run();
+
 }
